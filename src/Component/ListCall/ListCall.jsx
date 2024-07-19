@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 const ListCall = (props) => {
   const navigate = useNavigate();
 
-  const classes = useStyles();
+  const classes = useStyles({ ...props });
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [callDetails, setCallDetails] = useState({
     typoMessage: "",
@@ -144,7 +144,7 @@ const ListCall = (props) => {
         }}
       >
         <Button
-          className={classes.buttonAction}
+          className={`${classes.buttonAction} ${classes.buttonDisabled}`}
           variant="text"
           disabled={props.isArchived}
           onClick={() => {

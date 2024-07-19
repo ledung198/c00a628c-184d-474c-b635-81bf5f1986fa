@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { fontSize } from "../../constant/Constant";
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((props) => ({
   container: {
     padding: 15,
     cursor: "pointer",
@@ -71,4 +71,9 @@ export const useStyles = makeStyles(() => ({
     color: "black !important",
     display: "block !important",
   },
+  buttonDisabled: (props) => ({
+    fontSize: `${fontSize.small}px!important`,
+    color: props?.isArchived ? "#f1f1f1 !important" : "black !important",
+    display: "block !important",
+  }),
 }));

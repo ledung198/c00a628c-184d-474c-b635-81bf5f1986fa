@@ -1,29 +1,26 @@
 import { makeStyles } from "@mui/styles";
 import { fontSize } from "../../constant/Constant";
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((props) => ({
   main: {
     position: "relative",
   },
   container: {
     overflowY: "auto",
-    height: "530px",
-    background: "#FDFDFC",
+    height: "550px",
+    background: "#FAFAF9",
     scrollbarWidth: "none",
   },
 
   tabBox: {
     position: "absolute",
     right: 0,
-    top: "-12%",
+    top: "-10%",
     zIndex: 999,
-  },
-  iconCenter: {
-    background: "green",
-    borderRadius: "50%",
+    width: "65%",
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "flex-end",
+   
   },
   groupButton: {
     display: "flex",
@@ -31,11 +28,11 @@ export const useStyles = makeStyles(() => ({
     alignItems: "center",
     marginTop: "10px",
   },
-  buttonAction: {
+  buttonAction: (props) => ({
     fontSize: `${fontSize.small}px!important`,
-    color: "black !important",
+    color: !props?.isArchived ? "#f1f1f1 !important" : "black !important",
     display: "block !important",
-  },
+  }),
   boxImage: {
     display: "flex",
     justifyContent: "center",

@@ -55,3 +55,18 @@ export const handleResetArchiveCall = (setListDataCall) => {
       console.log(error);
     });
 };
+
+export const handleArchiveListCallDetail = (id, setDataDetail) => {
+  axios
+    .patch(`${URL_API}/activities/${id}`, {
+      is_archived: true,
+    })
+    .then((res) => {
+      if (handleCheckResponse(res)) {
+        handleGetDetail(id, setDataDetail);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};

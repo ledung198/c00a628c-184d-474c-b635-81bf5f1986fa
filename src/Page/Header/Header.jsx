@@ -6,7 +6,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box sx={{ display: "flex" }}>
       <Box className={classes.container}>
         <svg
           width="486px"
@@ -67,7 +67,6 @@ const Header = () => {
           </g>
         </svg>
       </Box>
-      <Box className={classes.borderLine}></Box>
     </Box>
   );
 };

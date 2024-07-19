@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@mui/icons-material/Folder";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import PersonIcon from "@mui/icons-material/Person";
 import AppsIcon from "@mui/icons-material/Apps";

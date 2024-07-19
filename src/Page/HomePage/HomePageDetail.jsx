@@ -2,7 +2,10 @@ import { Avatar, Box, Button, Grid, Popover, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useStyles } from "./HomePage.styles";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { handleGetDetail } from "./HandleHomePage.js";
+import {
+  handleArchiveListCallDetail,
+  handleGetDetail,
+} from "./HandleHomePage.js";
 import { useLocation } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Divider from "@mui/material/Divider";
@@ -16,7 +19,7 @@ import { CALL_TYPE, handleFormatDate } from "../../constant/Constant.js";
 const HomePageDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const classes = useStyles();
+  const classes = useStyles({...dataDetail});
   const [anchorEl, setAnchorEl] = useState(null);
   const [dataDetail, setDataDetail] = useState(null);
   console.log("dataDetail:", dataDetail);
@@ -181,10 +184,13 @@ const HomePageDetail = () => {
         }}
       >
         <Button
-          className={classes.buttonAction}
+          className={`${classes.buttonAction} ${classes.buttonDis}`}
           variant="text"
           disabled={dataDetail?.is_archived}
-          onClick={() => {}}
+          onClick={() => {
+            handleArchiveListCallDetail(dataDetail.id, setDataDetail);
+            handleClose();
+          }}
           fullWidth
         >
           Save Archive
