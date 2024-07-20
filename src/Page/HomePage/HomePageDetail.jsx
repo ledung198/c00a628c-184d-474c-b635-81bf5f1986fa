@@ -22,7 +22,6 @@ const HomePageDetail = () => {
   const classes = useStyles({...dataDetail});
   const [anchorEl, setAnchorEl] = useState(null);
   const [dataDetail, setDataDetail] = useState(null);
-  console.log("dataDetail:", dataDetail);
   const [dataDate, setDataDate] = useState({
     date: "",
     time: "",

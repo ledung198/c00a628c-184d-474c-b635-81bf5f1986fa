@@ -62,6 +62,8 @@ const HomePage = () => {
     }
   }, [listDataCall]);
 
+  console.log("re-render");
+
   return (
     <Box className={classes.main}>
       <Box className={classes.tabBox}>
