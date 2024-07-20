@@ -20,7 +20,6 @@ export const useStyles = makeStyles((props) => ({
     width: "65%",
     display: "flex",
     justifyContent: "flex-end",
-   
   },
   groupButton: {
     display: "flex",

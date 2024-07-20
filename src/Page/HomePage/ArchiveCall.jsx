@@ -13,10 +13,12 @@ import ListCall from "../../Component/ListCall/ListCall.jsx";
 
 const ArchiveCall = () => {
   const navigate = useNavigate();
-  const classes = useStyles();
   const [listDataCall, setListDataCall] = useState([]);
   const [listDataArchiveCall, setListDataArchiveCall] = useState([]);
   const [anchorEl, setAnchorEl] = useState(null);
+  const classes = useStyles({
+    isArchived: Boolean(listDataArchiveCall?.length),
+  });
 
   useEffect(() => {
     handleFetchDataListCall(setListDataCall);
@@ -93,7 +95,7 @@ const ArchiveCall = () => {
         <Button
           className={classes.buttonAction}
           variant="text"
-          //   disabled={dataDetail?.is_archived}
+          disabled={listDataArchiveCall?.length === 0}
           onClick={() => {
             handleResetArchiveCall(setListDataCall);
             handleClose();
